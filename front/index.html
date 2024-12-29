@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Блок авторизации -->
+        <div id="auth-container" class="auth-form">
+            <h1>Login / Register</h1>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <div class="buttons">
+                    <button type="button" onclick="login()">Login</button>
+                    <button type="button" onclick="register()">Register</button>
+                </div>
+            </form>
+            <p id="response"></p>
+        </div>
+
+        <!-- Основное меню -->
+        <div id="main-container" class="hidden">
+            <h1>Welcome</h1>
+            <div class="user-info">
+                <p id="money-display">💰 Money: $0</p>
+                <p id="bonus-timer">🎁 Bonus available in: --:--</p>
+            </div>
+            <button class="bonus-btn" onclick="getDailyBonus()">🎁 Collect Daily Bonus</button>
+            <h2>Your Items</h2>
+            <div id="items-grid" class="items-grid"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

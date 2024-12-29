@@ -1,0 +1,128 @@
+/* Общие стили */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f7f7fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Скрытые блоки */
+.hidden {
+    display: none;
+}
+
+/* Заголовки */
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Формы авторизации */
+.auth-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.auth-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #6c63ff;
+    color: white;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #4b47cc;
+}
+
+/* Основное меню */
+.bonus-btn {
+    width: 100%;
+    margin: 20px 0;
+    padding: 12px;
+    font-size: 18px;
+    background: #ff9800;
+}
+
+.bonus-btn:hover {
+    background: #e68900;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.item-card {
+    padding: 15px;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.item-card h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.item-card p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #777;
+}
+
+.item-card button {
+    margin-top: 10px;
+    background: #007bff;
+}
+
+.item-card button:hover {
+    background: #0056b3;
+}
+
+.item-card.purchased {
+    background: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}

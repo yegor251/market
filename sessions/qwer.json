@@ -1,0 +1,26 @@
+{
+    "money": 1698,
+    "bonus_timestamp": 1735483255,
+    "items": {
+        "123": {
+            "name": "bread",
+            "price": 99,
+            "status": 1
+        },
+        "909": {
+            "name": "wheat",
+            "price": 2,
+            "status": 1
+        },
+        "122": {
+            "name": "bread",
+            "price": 99,
+            "status": 1
+        },
+        "901": {
+            "name": "wheat",
+            "price": 2,
+            "status": 1
+        }
+    }
+}
