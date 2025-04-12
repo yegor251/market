@@ -1,7 +1,6 @@
 import asyncpg
 from fastapi import HTTPException
-from CVAR import DB_CONFIG
-
+from config import settings
 
 class DatabaseManager:
     def __init__(self):
@@ -9,17 +8,18 @@ class DatabaseManager:
 
     async def initialize_pool(self):
         if self.pool is None:
-            self.pool = await asyncpg.create_pool(**DB_CONFIG)
+            self.pool = await asyncpg.create_pool(
+                user=settings.db_user,
+                password=settings.db_password,
+                database=settings.db_name,
+                host=settings.db_host,
+                port=settings.db_port
+            )
 
     async def close_pool(self):
         if self.pool is not None:
             await self.pool.close()
             self.pool = None
-
-    async def get_pool(self):
-        if self.pool is None:
-            raise HTTPException(status_code=500, detail="Database pool is not initialized.")
-        return self.pool
 
     async def get_user(self, username: str):
         if not self.pool:
@@ -37,8 +37,6 @@ class DatabaseManager:
 
         async with self.pool.acquire() as conn:
             await conn.execute(
-                "INSERT INTO market_users (username, password) VALUES ($1, $2)", username, password
+                "INSERT INTO market_users (username, password) VALUES ($1, $2)",
+                username, password
             )
-
-
-db_manager = DatabaseManager()

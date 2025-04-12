@@ -1,6 +1,5 @@
 from datetime import datetime, timedelta
-from sessions_manager import manage_session
-
+from .session_manager import manage_session
 
 class UserManager:
     def __init__(self):
@@ -48,6 +47,5 @@ class UserManager:
             session["items"][item_id]["status"] = 1
             return True
         return False
-
 
 user_manager = UserManager()

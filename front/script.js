@@ -137,7 +137,7 @@ function startBonusTimer() {
 
 window.addEventListener('beforeunload', function () {
     if (token) {
-        fetch('http://127.0.0.1:8000/log-close', {
+        fetch('http://127.0.0.1:8000/logout', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ token }),
